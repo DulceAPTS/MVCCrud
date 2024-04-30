@@ -11,7 +11,10 @@ namespace MVCCrud.Controllers
 {
     public class TablaController : Controller
     {
-        // GET: Tabla
+        /// <summary>
+        /// Metodo index, devuelve a la vista una lista de usuarios 
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
             List<ListTablaViewModel> lst;
@@ -31,12 +34,22 @@ namespace MVCCrud.Controllers
 
         }
 
-
+        /// <summary>
+        /// Metodo GET Nuevo, que redirige a  la vista para crear un usuario 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
         public ActionResult Nuevo()
         {
             return View();
         }
 
+        /// <summary>
+        ///  Metodo Post Nuevo, que se encarga de dar de alta un usuario en la Base de datos
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         [HttpPost]
         public ActionResult Nuevo(TablaViewModel model)
         {
